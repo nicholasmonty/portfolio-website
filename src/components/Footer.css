@@ -39,3 +39,15 @@
     outline-offset: 4px;
     border-radius: 4px;
 }
+
+@media (max-width: 768px) {
+    .footer {
+        padding: 16px 0 18px;
+        margin-top: 20px;
+    }
+
+    .footerRow {
+        gap: 12px;
+        font-size: 13px;
+    }
+}

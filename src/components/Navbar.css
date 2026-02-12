@@ -23,7 +23,10 @@
     gap: 10px;
     font-weight: 650;
     letter-spacing: 0.2px;
+    text-decoration: none;
+    color: var(--text);
 }
+
 
 .brandText {
     font-weight: 700;
@@ -67,4 +70,23 @@
     outline: 2px solid rgba(142, 138, 122, 0.6);
     outline-offset: 4px;
     border-radius: 6px;
+}
+
+@media (max-width: 768px) {
+    .navInner {
+        padding: 0 16px;
+    }
+
+    .brandText {
+        font-size: 15px;
+    }
+
+    .navLinks {
+        gap: 10px;
+    }
+
+    .navBtn {
+        font-size: 13px;
+        padding: 6px 8px;
+    }
 }

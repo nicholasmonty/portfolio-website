@@ -169,3 +169,34 @@
         height: 320px;
     }
 }
+
+@media (max-width: 768px) {
+    .caseCard {
+        padding: 28px;
+        gap: 22px;
+        border-radius: 22px;
+        margin-bottom: 60px;
+    }
+
+    .caseTitle {
+        font-size: 26px;
+        line-height: 1.2;
+    }
+
+    .caseDesc {
+        font-size: 15px;
+    }
+
+    .caseImg {
+        height: 240px;
+    }
+
+    .btnRow {
+        flex-direction: column;
+    }
+
+    .btnPrimary,
+    .btnGhost {
+        width: 100%;
+    }
+}

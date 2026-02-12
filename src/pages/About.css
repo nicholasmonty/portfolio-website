@@ -35,3 +35,21 @@
 .aboutContent p:last-child {
     margin-bottom: 0;
 }
+
+@media (max-width: 768px) {
+    .aboutWrap {
+        padding: 40px 0 80px;
+    }
+
+    .aboutTitle {
+        font-size: 28px;
+    }
+
+    .aboutLead {
+        font-size: 20px;
+    }
+
+    .aboutContent p {
+        font-size: 16px;
+    }
+}

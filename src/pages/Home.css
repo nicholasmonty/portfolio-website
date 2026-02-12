@@ -105,3 +105,18 @@
     .waveLetter { animation: none; }
     .scrollHint { transition: none; }
 }
+
+@media (max-width: 768px) {
+    .heroTitle {
+        font-size: 36px;
+    }
+
+    .heroSub {
+        font-size: 14px;
+        padding: 0 10px;
+    }
+
+    .scrollHint {
+        font-size: 12px;
+    }
+}

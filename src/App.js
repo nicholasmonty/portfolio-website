@@ -10,25 +10,24 @@ import About from "./pages/About";
 
 export default function App() {
     return (
-        <>
+        <div className="appShell">
             <Navbar />
 
-            {/* Main scroll container */}
-            <main className="pageScroller">
-                <section id="home" className="snapSection">
+            <main className="page">
+                <section id="home" className="section">
                     <Home />
                 </section>
 
-                <section id="projects" className="snapSection">
+                <section id="projects" className="section">
                     <Projects />
                 </section>
 
-                <section id="about" className="snapSection">
+                <section id="about" className="section">
                     <About />
                 </section>
             </main>
 
             <Footer />
-        </>
+        </div>
     );
 }

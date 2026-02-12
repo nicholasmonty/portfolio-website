@@ -1,17 +1,18 @@
-/* Main scroll container */
-.pageScroller {
-    height: 100vh;
-    overflow-y: auto;
-    scroll-behavior: smooth;
+.appShell {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
 }
 
-/* Base section spacing */
-.snapSection {
-    padding-top: 72px;
+.page {
+    flex: 1;
 }
 
-/* Hero section */
-#home.snapSection {
+.section {
+    padding-top: 72px; /* must match .navWrap height */
+}
+
+#home.section {
     min-height: calc(100vh - 72px);
     display: flex;
     align-items: center;

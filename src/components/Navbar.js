@@ -1,15 +1,17 @@
 import React from "react";
 import "./Navbar.css";
 
-/* Scroll helper */
+const NAV_OFFSET = 72;
+
 const scrollToId = (id) => {
-    const target = document.getElementById(id);
-    const scroller = document.querySelector(".pageScroller");
+    const el = document.getElementById(id);
+    if (!el) return;
 
-    if (!target || !scroller) return;
+    const y =
+        el.getBoundingClientRect().top + window.pageYOffset - NAV_OFFSET;
 
-    scroller.scrollTo({
-        top: target.offsetTop - 88,
+    window.scrollTo({
+        top: y,
         behavior: "smooth",
     });
 };
@@ -18,20 +20,38 @@ export default function Navbar() {
     return (
         <header className="navWrap">
             <div className="container navInner">
-                {/* Clicking returns to home */}
-                <button className="brand" onClick={() => scrollToId("home")}>
+                {/* Brand / Home button */}
+                <button
+                    type="button"
+                    className="brand"
+                    onClick={() => scrollToId("home")}
+                >
                     <span className="brandText">Nicholas Montgomery</span>
                 </button>
 
-                {/* Primary navigation */}
+                {/* Navigation */}
                 <nav className="navLinks" aria-label="Primary">
-                    <button className="navBtn" onClick={() => scrollToId("home")}>
+                    <button
+                        type="button"
+                        className="navBtn"
+                        onClick={() => scrollToId("home")}
+                    >
                         Home
                     </button>
-                    <button className="navBtn" onClick={() => scrollToId("projects")}>
+
+                    <button
+                        type="button"
+                        className="navBtn"
+                        onClick={() => scrollToId("projects")}
+                    >
                         Projects
                     </button>
-                    <button className="navBtn" onClick={() => scrollToId("about")}>
+
+                    <button
+                        type="button"
+                        className="navBtn"
+                        onClick={() => scrollToId("about")}
+                    >
                         About
                     </button>
                 </nav>

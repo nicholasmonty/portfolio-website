@@ -10,7 +10,6 @@ export default function Home() {
 
         const scroller = document.querySelector(".pageScroller");
 
-        // Scroll inside the app container
         if (scroller) {
             scroller.scrollTo({
                 top: target.offsetTop - NAV_OFFSET,
@@ -19,7 +18,6 @@ export default function Home() {
             return;
         }
 
-        // Fallback
         const y = target.getBoundingClientRect().top + window.scrollY - NAV_OFFSET;
         window.scrollTo({ top: y, behavior: "smooth" });
     };
@@ -31,7 +29,6 @@ export default function Home() {
                     <span className="welcomeText">Welcome! My name is</span>
                 </div>
 
-                {/* Wave animation */}
                 <h1 className="heroTitle">
                     {"Nicholas Montgomery".split("").map((ch, i) => (
                         <span
@@ -39,8 +36,8 @@ export default function Home() {
                             className="waveLetter"
                             style={{ animationDelay: `${i * 0.05}s` }}
                         >
-              {ch === " " ? "\u00A0" : ch}
-            </span>
+                            {ch === " " ? "\u00A0" : ch}
+                        </span>
                     ))}
                 </h1>
 
@@ -57,8 +54,8 @@ export default function Home() {
                 >
                     <span className="scrollHintText">Scroll for more</span>
                     <span className="scrollArrow" aria-hidden="true">
-            ↓
-          </span>
+                        ↓
+                    </span>
                 </button>
             </div>
         </div>

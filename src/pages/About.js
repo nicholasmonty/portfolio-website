@@ -1,30 +1,33 @@
 import React, { useState } from "react";
 import "./About.css";
+import lambdaCrest from "../assets/lambda-crest.png";
+import stBaldricksLogo from "../assets/stbaldricks-logo.png";
 
-function AboutCard({ title, children }) {
+function ExpandCard({ children }) {
     const [open, setOpen] = useState(false);
 
+    const toggle = () => {
+        setOpen((prev) => !prev);
+    };
+
+    const handleKeyDown = (e) => {
+        if (e.key === "Enter" || e.key === " ") {
+            e.preventDefault();
+            toggle();
+        }
+    };
+
     return (
-        <button
-            type="button"
-            className={`uiCard ${open ? "isOpen" : ""}`}
-            onClick={() => setOpen((v) => !v)}
+        <div
+            className={`aboutBrowserCard ${open ? "isOpen" : ""}`}
+            role="button"
+            tabIndex={0}
             aria-expanded={open}
+            onClick={toggle}
+            onKeyDown={handleKeyDown}
         >
-            <div className="uiAlign" aria-hidden="true">
-                <span className="uiRed" />
-                <span className="uiYellow" />
-                <span className="uiGreen" />
-            </div>
-
-            <h3 className="uiCardTitle">{title}</h3>
-
-            <div className="uiCardBody">
-                {children}
-            </div>
-
-            <div className="uiHint">{open ? "Tap to collapse" : "Tap to expand"}</div>
-        </button>
+            {children}
+        </div>
     );
 }
 
@@ -56,33 +59,105 @@ export default function About() {
                 </p>
             </div>
 
-            {/* Cards go here (under About copy, above footer) */}
             <div className="aboutCardsWrap">
+                <p className="aboutCardsHint" />
 
-                <p className="aboutCardsHint">
-                    Hover to expand • Tap on mobile
-                </p>
+                <div className="aboutCards aboutCards--two">
 
-                <div className="aboutCards">
-                <AboutCard title="Design + Clarity">
-                        I simplify complex ideas into clean layouts, clear messaging, and
-                        user flows that feel effortless.
-                    </AboutCard>
+                    {/* Lambda Chi */}
+                    <ExpandCard>
+                        <div className="aboutBrowserTabsHead" aria-hidden="true">
+                            <div className="aboutTabOpen">
+                                <span>Lambda Chi Alpha</span>
+                                <span className="aboutCloseTab">×</span>
+                                <div className="aboutRoundedL">
+                                    <div className="aboutMaskRound" />
+                                </div>
+                                <div className="aboutRoundedR">
+                                    <div className="aboutMaskRound" />
+                                </div>
+                            </div>
 
-                    <AboutCard title="Strategy + Growth">
-                        I focus on outcomes—conversion, retention, and brand trust—so the
-                        site doesn’t just look good, it performs.
-                    </AboutCard>
+                            <div className="aboutWindowOpt" aria-hidden="true">
+                                <button type="button" tabIndex={-1}>—</button>
+                                <button type="button" tabIndex={-1}>□</button>
+                                <button type="button" tabIndex={-1} className="aboutWindowClose">×</button>
+                            </div>
+                        </div>
 
-                    <AboutCard title="Build + Launch">
-                        I ship modern, responsive sites with performance and polish—then
-                        refine based on real behavior and feedback.
-                    </AboutCard>
+                        <div className="aboutHeadBrowser" aria-hidden="true">
+                            <button type="button" tabIndex={-1}>←</button>
+                            <button type="button" tabIndex={-1}>→</button>
+                            <input readOnly value="https://lambdachi.org" tabIndex={-1} />
+                            <span className="aboutStar">★</span>
+                        </div>
+
+                        <div className="aboutBrowserBody aboutBrowserBody--lambda">
+                            <img
+                                src={lambdaCrest}
+                                alt="Lambda Chi Alpha Crest"
+                                className="aboutLambdaImage"
+                            />
+
+                            <h3>Leadership & Brotherhood</h3>
+
+                            <p>
+                                As an active member of Lambda Chi Alpha, I developed leadership,
+                                accountability, and collaboration skills that continue to shape
+                                how I approach teamwork and responsibility.
+                            </p>
+                        </div>
+                    </ExpandCard>
+
+                    {/* St. Baldrick's */}
+                    <ExpandCard>
+                        <div className="aboutBrowserTabsHead" aria-hidden="true">
+                            <div className="aboutTabOpen">
+                                <span>St. Baldrick's Foundation</span>
+                                <span className="aboutCloseTab">×</span>
+                                <div className="aboutRoundedL">
+                                    <div className="aboutMaskRound" />
+                                </div>
+                                <div className="aboutRoundedR">
+                                    <div className="aboutMaskRound" />
+                                </div>
+                            </div>
+
+                            <div className="aboutWindowOpt" aria-hidden="true">
+                                <button type="button" tabIndex={-1}>—</button>
+                                <button type="button" tabIndex={-1}>□</button>
+                                <button type="button" tabIndex={-1} className="aboutWindowClose">×</button>
+                            </div>
+                        </div>
+
+                        <div className="aboutHeadBrowser" aria-hidden="true">
+                            <button type="button" tabIndex={-1}>←</button>
+                            <button type="button" tabIndex={-1}>→</button>
+                            <input readOnly value="https://www.stbaldricks.org" tabIndex={-1} />
+                            <span className="aboutStar">★</span>
+                        </div>
+
+                        <div className="aboutBrowserBody aboutBrowserBody--lambda">
+                            <img
+                                src={stBaldricksLogo}
+                                alt="St. Baldrick's Foundation Logo"
+                                className="aboutLambdaImage"
+                            />
+
+                            <h3>Fundraising & Impact</h3>
+
+                            <p>
+                                I raised <strong>$1,000+</strong> for childhood cancer research
+                                through the St. Baldrick’s Foundation by leading outreach efforts,
+                                mobilizing peers, and driving donor engagement within the community.
+                            </p>
+                        </div>
+                    </ExpandCard>
+
                 </div>
 
                 <p className="aboutCardsNote">
-                    These three areas guide how I approach projects: simplify the experience,
-                    align with business goals, and build something that performs in the real world.
+                    Experiences that shaped how I lead, collaborate, and deliver real results.
                 </p>
             </div>
         </section>

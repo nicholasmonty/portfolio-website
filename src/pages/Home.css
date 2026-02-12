@@ -1,0 +1,107 @@
+.homeWrap {
+    width: 100%;
+    min-height: calc(100vh - 72px);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.homeCenter {
+    text-align: center;
+    padding: 40px 0 20px;
+}
+
+.welcomeRow {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    color: rgba(11, 15, 20, 0.75);
+    margin-bottom: 14px;
+}
+
+.welcomeText {
+    font-size: 16px;
+}
+
+.heroTitle {
+    margin: 0;
+    font-size: clamp(44px, 5vw, 64px);
+    line-height: 1.05;
+    letter-spacing: -0.02em;
+}
+
+/* Wave animation */
+.waveLetter {
+    display: inline-block;
+    animation: waveMotion 5s ease-in-out infinite;
+}
+
+@keyframes waveMotion {
+    0% { transform: translateY(0); }
+    10% { transform: translateY(-6px); }
+    20% { transform: translateY(0); }
+    100% { transform: translateY(0); }
+}
+
+.heroSub {
+    margin: 16px auto 0;
+    width: min(680px, 100%);
+    color: rgba(11, 15, 20, 0.65);
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+/* Scroll hint button */
+.scrollHint {
+    margin: 28px auto 0;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 16px;
+
+    border-radius: 999px;
+    border: 1px solid rgba(11, 15, 20, 0.14);
+    background: rgba(255, 255, 255, 0.65);
+    color: rgba(11, 15, 20, 0.70);
+
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.scrollHint:hover {
+    border-color: rgba(142, 138, 122, 0.55);
+    color: rgba(11, 15, 20, 0.90);
+    transform: translateY(-1px);
+}
+
+.scrollHintText {
+    font-size: 13px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+}
+
+.scrollArrow {
+    display: inline-flex;
+    width: 28px;
+    height: 28px;
+    align-items: center;
+    justify-content: center;
+    border-radius: 999px;
+
+    background: rgba(142, 138, 122, 0.14);
+    border: 1px solid rgba(142, 138, 122, 0.25);
+    color: rgba(60, 58, 50, 0.95);
+
+    animation: bounceDown 1.4s infinite;
+}
+
+@keyframes bounceDown {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(6px); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .scrollArrow { animation: none; }
+    .waveLetter { animation: none; }
+    .scrollHint { transition: none; }
+}

@@ -1,0 +1,37 @@
+.aboutWrap {
+    width: 100%;
+    padding: 80px 0 140px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.aboutTitle {
+    margin: 0 0 48px;
+    font-size: clamp(32px, 3vw, 40px);
+    font-weight: 700;
+    letter-spacing: -0.02em;
+}
+
+.aboutContent {
+    max-width: 720px;
+}
+
+.aboutLead {
+    font-size: clamp(22px, 2.4vw, 26px);
+    line-height: 1.45;
+    margin-bottom: 28px;
+    font-weight: 600;
+}
+
+.aboutContent p {
+    font-size: 20px;
+    line-height: 1.7;
+    color: rgba(11, 15, 20, 0.75);
+    margin-bottom: 24px;
+}
+
+.aboutContent p:last-child {
+    margin-bottom: 0;
+}

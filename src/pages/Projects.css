@@ -1,0 +1,171 @@
+.projectsWrap {
+    width: 100%;
+    padding: 10px 0 70px;
+}
+
+.sectionTitle {
+    margin: 6px 0 34px;
+    text-align: center;
+    font-size: clamp(34px, 3.2vw, 48px);
+    letter-spacing: -0.02em;
+}
+
+/* Card sizing and layout */
+.caseCard {
+    width: 100%;
+    max-width: 1100px;
+    min-height: 640px;
+    margin: 0 auto 100px;
+
+    background: var(--card-bg);
+    border-radius: 34px;
+    padding: 56px;
+    box-shadow: var(--shadow);
+
+    display: grid;
+    grid-template-columns: 1.12fr 0.88fr;
+    gap: 44px;
+    align-items: center;
+}
+
+/* Left side typography */
+.caseOrg {
+    margin: 0 0 10px;
+    font-size: 12px;
+    letter-spacing: 0.16em;
+    color: rgba(11, 15, 20, 0.45);
+    text-transform: uppercase;
+}
+
+.caseTitle {
+    margin: 0 0 14px;
+    font-size: 44px;
+    letter-spacing: -0.03em;
+    line-height: 1.05;
+    max-width: 560px;
+}
+
+.caseDesc {
+    margin: 0 0 18px;
+    color: rgba(11, 15, 20, 0.60);
+    line-height: 1.7;
+    max-width: 560px;
+}
+
+/* Tags */
+.tagRow {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin: 18px 0 22px;
+}
+
+.tag {
+    padding: 10px 14px;
+    border-radius: 999px;
+
+    background: rgba(142, 138, 122, 0.14);
+    border: 1px solid rgba(142, 138, 122, 0.28);
+    color: rgba(60, 58, 50, 0.95);
+
+    font-size: 12px;
+    letter-spacing: 0.10em;
+    text-transform: uppercase;
+}
+
+/* Buttons */
+.btnRow {
+    display: flex;
+    gap: 14px;
+    margin-top: 26px;
+    flex-wrap: wrap;
+}
+
+.btnPrimary,
+.btnGhost {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    height: 56px;
+    padding: 0 28px;
+    border-radius: 999px;
+
+    font-weight: 700;
+    letter-spacing: 0.02em;
+    cursor: pointer;
+
+    text-decoration: none;
+    border: none;
+    outline: none;
+    appearance: none;
+    -webkit-appearance: none;
+}
+
+.btnPrimary {
+    background: #8E8A7A;
+    color: #fff;
+    font-weight: 750;
+    border: 1px solid rgba(0, 0, 0, 0.06);
+}
+
+.btnPrimary:hover {
+    background: #6F6B5D;
+}
+
+.btnGhost {
+    background: rgba(255, 255, 255, 0.75);
+    border: 1px solid rgba(11, 15, 20, 0.18);
+    color: rgba(11, 15, 20, 0.85);
+}
+
+.btnGhost:hover {
+    background: rgba(255, 255, 255, 0.95);
+    border-color: rgba(11, 15, 20, 0.24);
+    color: rgba(11, 15, 20, 0.95);
+}
+
+/* Focus states */
+.btnPrimary:focus-visible,
+.btnGhost:focus-visible {
+    outline: 2px solid rgba(142, 138, 122, 0.6);
+    outline-offset: 4px;
+}
+
+/* Right image container */
+.caseRight {
+    border-radius: 26px;
+    overflow: hidden;
+    background: rgba(255, 255, 255, 0.45);
+    border: 1px solid rgba(11, 15, 20, 0.10);
+    box-shadow: 0 16px 34px rgba(15, 23, 42, 0.10);
+}
+
+.caseImg {
+    width: 100%;
+    height: 440px;
+    object-fit: cover;
+    display: block;
+}
+
+/* Responsive */
+@media (max-width: 980px) {
+    .caseCard {
+        grid-template-columns: 1fr;
+        min-height: auto;
+        padding: 36px;
+        gap: 26px;
+    }
+
+    .caseTitle {
+        font-size: 34px;
+        max-width: none;
+    }
+
+    .caseDesc {
+        max-width: none;
+    }
+
+    .caseImg {
+        height: 320px;
+    }
+}
